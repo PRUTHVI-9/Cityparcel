@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CityParcel</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="facebook_app_id">749299579373549</string>
+    <string name="fb_login_protocol_scheme">fb749299579373549</string>
+    <string name="facebook_client_token">ae6a19d7f389ae3989b376e50c2c6aa0</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

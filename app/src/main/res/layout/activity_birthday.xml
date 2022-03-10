@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    tools:context=".BirthdayActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Provide Your Birthday &amp;"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp">
+
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Anniversary Date"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center">
+
+    </TextView>
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"
+        android:text="Don't worry your record will be saved securely will "
+        android:gravity="center"></TextView>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"
+        android:text="not share with anyone "
+        android:gravity="center"></TextView>
+
+
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/b1">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/birth"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:text="Birth Date"
+        android:padding="5dp"
+        android:gravity="center_vertical"
+        android:drawableRight="@drawable/ic_calendar"
+        android:layout_margin="20dp"
+        android:background="@drawable/menu_btn"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="20dp">
+
+    </TextView>
+    <TextView
+        android:id="@+id/anniversary"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="6dp"
+        android:text="Anniversary Date"
+        android:padding="5dp"
+        android:gravity="center_vertical"
+        android:drawableRight="@drawable/ic_calendar"
+        android:layout_margin="20dp"
+        android:background="@drawable/menu_btn"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="20dp">
+
+    </TextView>
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"
+        android:text="You will receive Special Offers &amp; Discounts on your "
+        android:gravity="center"></TextView>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"
+        android:text="Birthday &amp; Anniversary "
+        android:gravity="center"></TextView>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="submit"
+        android:background="@drawable/btn_bg3"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="40dp"></Button>
+
+    </LinearLayout>
+
+
+</ScrollView>

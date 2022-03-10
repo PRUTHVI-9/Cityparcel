@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "348090124446",
+    "project_id": "cityparcel-b9dbd",
+    "storage_bucket": "cityparcel-b9dbd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348090124446:android:2945ac21693effb712938f",
+        "android_client_info": {
+          "package_name": "com.example.cityparcel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348090124446-mhc6gnmp19fs3lva4bu6vhvbb2ndv2k0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdkvB5qPatVbrYagszNvXstbnsas1foCQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348090124446-mhc6gnmp19fs3lva4bu6vhvbb2ndv2k0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

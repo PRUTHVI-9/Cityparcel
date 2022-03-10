@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/botomsheet"
+    android:background="@android:color/white"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:id="@+id/imagebs"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:src="@drawable/pankaj"></ImageView>
+
+
+    <include layout="@layout/bottomsheet_layout"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
