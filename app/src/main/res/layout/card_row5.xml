@@ -68,6 +68,19 @@
 
         </RelativeLayout>
 
+        <ImageView
+            android:id="@+id/favorite3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/whitecircle"
+            android:padding="2dp"
+            android:src="@drawable/ic_favorite">
+
+        </ImageView>
+
 
 
 

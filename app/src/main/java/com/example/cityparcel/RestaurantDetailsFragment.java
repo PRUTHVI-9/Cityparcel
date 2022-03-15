@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,6 +28,8 @@ public class RestaurantDetailsFragment extends Fragment {
     ImageView imageView;
     TabLayout tablayout;
     TextView text_card1, text_card2;
+    RelativeLayout rl_distance;
+
 
     @Nullable
     @Override
@@ -37,6 +40,7 @@ public class RestaurantDetailsFragment extends Fragment {
         text_card1 = view.findViewById(R.id.text_card1);
         text_card2 = view.findViewById(R.id.text_card2);
         tablayout = view.findViewById(R.id.tablayout);
+        rl_distance = view.findViewById(R.id.rl_distance);
         Adapter adapter = new Adapter(this);
         viewPager.setAdapter(adapter);
         new TabLayoutMediator(tablayout, viewPager,
@@ -73,6 +77,21 @@ public class RestaurantDetailsFragment extends Fragment {
         bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
+                if (newState== BottomSheetBehavior.STATE_COLLAPSED){
+                    text_card1.setVisibility(View.VISIBLE);
+                    text_card2.setVisibility(View.VISIBLE);
+                    rl_distance.setVisibility(View.VISIBLE);
+                    viewPager.getAdapter().notifyDataSetChanged();
+                } else if (newState == BottomSheetBehavior.STATE_EXPANDED){
+                    text_card1.setVisibility(View.GONE);
+                    text_card2.setVisibility(View.GONE);
+                    rl_distance.setVisibility(View.GONE);
+                } else if (newState== BottomSheetBehavior.STATE_DRAGGING){
+                    text_card1.setVisibility(View.VISIBLE);
+                    text_card2.setVisibility(View.VISIBLE);
+                    rl_distance.setVisibility(View.VISIBLE);
+                    viewPager.getAdapter().notifyDataSetChanged();
+                }
 
             }
 

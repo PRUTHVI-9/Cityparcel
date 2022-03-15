@@ -10,6 +10,7 @@
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/btn_bg3.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/btn_bg5xml.xml" value="0.2203125" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/ic_baseline_favorite_red.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/ic_baseline_home_24_orange.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/ic_baseline_local_dining_24.xml" value="0.22447916666666667" />
@@ -17,10 +18,13 @@
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/ic_cart_24_orange.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/ic_dining.xml" value="0.1109375" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/ic_dining_orange.xml" value="0.1109375" />
+        <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/ic_favorite.xml" value="0.2203125" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/ic_person_24.xml" value="0.1109375" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/ic_person_24_orange.xml" value="0.1109375" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/menu_btn.xml" value="0.2203125" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/search.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/thumb_selector.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/drawable/whitecircle.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/layout/activity_birthday.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/layout/activity_main.xml" value="0.176" />
@@ -56,6 +60,7 @@
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/layout/fragment_shopping2.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/layout/menu_row.xml" value="0.264" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/layout/photo_row.xml" value="0.2" />
+        <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/layout/review_bottomsheet.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/layout/review_row.xml" value="0.264" />
         <entry key="..\:/Users/pruth.DESKTOP-5P28CHH/AndroidStudioProjects/CityParcel/app/src/main/res/menu/base_menu.xml" value="0.20416666666666666" />
       </map>

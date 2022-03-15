@@ -41,6 +41,17 @@ public class RestolistAdapter extends RecyclerView.Adapter<RestolistAdapter.MyVi
 //        holder.rating.setText(restaurant.getRating());
         holder.time.setText(restaurant.getDelivery_time());
         holder.imageView.setImageResource(restaurant.getImage());
+        holder.favorite2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (holder.favorite2.getDrawable().getConstantState() ==
+                context.getResources().getDrawable(R.drawable.ic_baseline_favorite_red).getConstantState()){
+                    holder.favorite2.setImageResource(R.drawable.ic_favorite);
+                }else {
+                    holder.favorite2.setImageResource(R.drawable.ic_baseline_favorite_red);
+                }
+            }
+        });
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,6 +81,7 @@ public class RestolistAdapter extends RecyclerView.Adapter<RestolistAdapter.MyVi
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
+        ImageView favorite2;
         TextView title,discription,rating,time;
         CardView card;
         public MyViewHolder(@NonNull View itemView) {
@@ -80,6 +92,7 @@ public class RestolistAdapter extends RecyclerView.Adapter<RestolistAdapter.MyVi
             rating = itemView.findViewById(R.id.rating);
             time = itemView.findViewById(R.id.min);
             card = itemView.findViewById(R.id.resto_card);
+            favorite2 = itemView.findViewById(R.id.favorite2);
 
         }
 

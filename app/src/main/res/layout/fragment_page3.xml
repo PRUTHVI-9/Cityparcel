@@ -24,8 +24,19 @@
             android:id="@+id/review"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
         </androidx.recyclerview.widget.RecyclerView>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="add review"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@drawable/btn_bg3"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"></Button>
 
 
     </LinearLayout>

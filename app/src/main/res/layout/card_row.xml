@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="150dp"
-    android:id="@+id/resto_card"
-    android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/resto_card"
+    android:layout_width="150dp"
+    android:layout_height="200dp"
     android:layout_margin="5dp"
-    app:cardCornerRadius="10dp"
-    android:elevation="5dp">
-    
+    android:elevation="5dp"
+    app:cardCornerRadius="10dp">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -20,58 +20,70 @@
 
             <ImageView
                 android:id="@+id/imageIcon"
-                android:scaleType="fitXY"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="100dp"
+                android:scaleType="fitXY" />
 
             <TextView
-                android:layout_marginTop="10dp"
                 android:id="@+id/title"
-                android:text="Shree Hotel"
-                android:layout_marginLeft="5dp"
-                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black" />
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="Shree Hotel"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/description"
-                android:layout_marginLeft="5dp"
                 android:layout_width="match_parent"
-                android:text="  All you need is love. But a little chocolate now and then doesn’t hurt."
-                android:textSize="12sp"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/darker_gray" />
+                android:layout_marginLeft="5dp"
+                android:text="  All you need is love. But a little chocolate now and then doesn’t hurt."
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp" />
 
         </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="5dp"
-            android:layout_height="wrap_content">
+            android:layout_marginBottom="5dp">
 
             <TextView
                 android:id="@+id/rating"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:textColor="#316F33"
-                android:text="&#9733;&#9733;&#9733;&#9733;&#9734;"></TextView>
+                android:text="&#9733;&#9733;&#9733;&#9733;&#9734;"
+                android:textColor="#316F33"></TextView>
 
             <TextView
                 android:id="@+id/min"
-                android:textSize="10sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="5dp"
-                android:text="10-20 min">
+                android:text="10-20 min"
+                android:textSize="10sp">
 
             </TextView>
         </RelativeLayout>
 
 
+        <ImageView
+            android:id="@+id/favorite2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/whitecircle"
+            android:padding="2dp"
+            android:src="@drawable/ic_favorite">
+
+        </ImageView>
 
 
     </RelativeLayout>

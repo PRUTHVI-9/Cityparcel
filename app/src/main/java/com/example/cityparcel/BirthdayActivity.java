@@ -14,6 +14,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Calendar;
+
 public class BirthdayActivity extends AppCompatActivity {
     TextView Birthday,Anniversary;
     Button submit;
@@ -25,6 +27,9 @@ public class BirthdayActivity extends AppCompatActivity {
         Birthday = findViewById(R.id.birth);
         Anniversary = findViewById(R.id.anniversary);
         submit = findViewById(R.id.submit);
+        Calendar calendar=Calendar.getInstance();
+        calendar.add(Calendar.YEAR,-18);
+        calendar.add(Calendar.YEAR,+18);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,6 +43,7 @@ public class BirthdayActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(BirthdayActivity.this);
+                datePickerDialog.getDatePicker().setMaxDate(calendar.getTimeInMillis());
                 datePickerDialog.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int dayofMonth, int month, int year) {
@@ -55,6 +61,7 @@ public class BirthdayActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(BirthdayActivity.this);
+                datePickerDialog.getDatePicker().setMaxDate(calendar.getTimeInMillis());
                 datePickerDialog.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int dayofMonth, int month, int year) {

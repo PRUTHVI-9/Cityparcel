@@ -36,6 +36,17 @@ public class FarmAdapter extends RecyclerView.Adapter<FarmAdapter.FarmHolder> {
         holder.imageView.setImageResource(farm.getImg());
         holder.tv.setText(farm.getFarm1());
         holder.tv1.setText(Html.fromHtml(farm.getFarm2()));
+        holder.favorite3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (holder.favorite3.getDrawable().getConstantState()==
+                context.getResources().getDrawable(R.drawable.ic_baseline_favorite_red).getConstantState()){
+                    holder.favorite3.setImageResource(R.drawable.ic_favorite);
+                }else {
+                    holder.favorite3.setImageResource(R.drawable.ic_baseline_favorite_red);
+                }
+            }
+        });
 
     }
 
@@ -47,9 +58,11 @@ public class FarmAdapter extends RecyclerView.Adapter<FarmAdapter.FarmHolder> {
     public class FarmHolder extends RecyclerView.ViewHolder {
         TextView tv,tv1;
         ImageView imageView;
+        ImageView favorite3;
         public FarmHolder(@NonNull View itemView) {
             super(itemView);
             imageView=itemView.findViewById(R.id.farmimage);
+            favorite3=itemView.findViewById(R.id.favorite3);
             tv=itemView.findViewById(R.id.farmpro);
             tv1=itemView.findViewById(R.id.kg);
         }

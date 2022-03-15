@@ -32,6 +32,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.CustomViewHold
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
         holder.imageView.setImageResource(list.get(position));
 
+
     }
 
     @Override
@@ -42,9 +43,11 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.CustomViewHold
     public class CustomViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
 
+
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.image);
+
         }
     }
 }

@@ -37,6 +37,17 @@ public class FarmGiftAdapter extends RecyclerView.Adapter<FarmGiftAdapter.MyCust
         holder.textView1.setText(resto.getTitle());
         holder.textView2.setText(Html.fromHtml(resto.getTitle2()));
         holder.imageView.setImageResource(resto.getImage());
+        holder.favorite1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (holder.favorite1.getDrawable().getConstantState() ==
+                context.getResources().getDrawable(R.drawable.ic_baseline_favorite_red).getConstantState()){
+                    holder.favorite1.setImageResource(R.drawable.ic_favorite);
+                }else{
+                    holder.favorite1.setImageResource(R.drawable.ic_baseline_favorite_red);
+                }
+            }
+        });
 
 
     }
@@ -48,10 +59,12 @@ public class FarmGiftAdapter extends RecyclerView.Adapter<FarmGiftAdapter.MyCust
 
     public class MyCustomViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
+        ImageView favorite1;
         TextView textView1,textView2;
         public MyCustomViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.image1);
+            favorite1 = itemView.findViewById(R.id.favorite1);
             textView1 = itemView.findViewById(R.id.farmproduct);
             textView2 = itemView.findViewById(R.id.kilogram);
         }

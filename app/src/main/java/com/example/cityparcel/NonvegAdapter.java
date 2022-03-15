@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -19,7 +20,7 @@ import java.util.List;
 
 public class NonvegAdapter extends RecyclerView.Adapter<NonvegAdapter.NonVegHolder> {
     Context context;
-    List<NonvegClass>list;
+    List<NonvegClass> list;
 
     public NonvegAdapter(Context context, List<NonvegClass> list) {
         this.context = context;
@@ -29,7 +30,7 @@ public class NonvegAdapter extends RecyclerView.Adapter<NonvegAdapter.NonVegHold
     @NonNull
     @Override
     public NonVegHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.card_row4,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.card_row4, parent, false);
         NonVegHolder holder = new NonVegHolder(view);
         return holder;
     }
@@ -42,22 +43,32 @@ public class NonvegAdapter extends RecyclerView.Adapter<NonvegAdapter.NonVegHold
         holder.textView3.setText(Html.fromHtml(nonvegClass.getNonveg3()));
         holder.textView4.setText(nonvegClass.getNonveg4());
         holder.imageView.setImageResource(nonvegClass.getNonimage());
+        holder.favorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (holder.favorite.getDrawable().getConstantState() ==
+                        context. getResources().getDrawable(R.drawable.ic_baseline_favorite_red).getConstantState()){
+                    holder.favorite.setImageResource(R.drawable.ic_favorite);
+                } else{
+                    holder.favorite.setImageResource(R.drawable.ic_baseline_favorite_red);
+                }
+            }
+        });
+
         holder.card.setOnClickListener(new View.OnClickListener() {
-
-
 
 
             @Override
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
-                bundle.putString("title",nonvegClass.getNonveg1());
-                bundle.putString("discription",nonvegClass.getNonveg2());
-                bundle.putInt("image",nonvegClass.getNonimage());
+                bundle.putString("title", nonvegClass.getNonveg1());
+                bundle.putString("discription", nonvegClass.getNonveg2());
+                bundle.putInt("image", nonvegClass.getNonimage());
 
                 RestaurantDetailsFragment restaurantDetailsFragment = new RestaurantDetailsFragment();
                 restaurantDetailsFragment.setArguments(bundle);
 
-                 ((HomeActivity)context).getSupportFragmentManager().beginTransaction()
+                ((HomeActivity) context).getSupportFragmentManager().beginTransaction()
                         .setReorderingAllowed(true)
                         .replace(R.id.homeframe1, restaurantDetailsFragment, null)
                         .commit();
@@ -75,16 +86,18 @@ public class NonvegAdapter extends RecyclerView.Adapter<NonvegAdapter.NonVegHold
         TextView textView2;
         TextView textView3;
         TextView textView4;
-        ImageView imageView;
+        ImageView imageView, favorite;
         CardView card;
+
         public NonVegHolder(@NonNull View itemView) {
             super(itemView);
-            textView1=itemView.findViewById(R.id.test3);
-            textView2=itemView.findViewById(R.id.test4);
-            textView3=itemView.findViewById(R.id.test5);
-            textView4=itemView.findViewById(R.id.timing);
-            imageView=itemView.findViewById(R.id.image2);
-            card=itemView.findViewById(R.id.card);
+            textView1 = itemView.findViewById(R.id.test3);
+            textView2 = itemView.findViewById(R.id.test4);
+            textView3 = itemView.findViewById(R.id.test5);
+            textView4 = itemView.findViewById(R.id.timing);
+            imageView = itemView.findViewById(R.id.image2);
+            favorite = itemView.findViewById(R.id.favorite);
+            card = itemView.findViewById(R.id.card);
         }
     }
 }

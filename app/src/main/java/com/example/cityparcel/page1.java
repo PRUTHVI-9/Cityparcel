@@ -34,4 +34,5 @@ public class page1 extends Fragment {
         menulist_rv.setNestedScrollingEnabled(false);
         return view;
     }
+
 }
