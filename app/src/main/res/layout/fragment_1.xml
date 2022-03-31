@@ -85,6 +85,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:orientation="vertical"
                 android:id="@+id/lay_nextbtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -106,6 +107,23 @@
                     android:textAllCaps="false">
 
                 </Button>
+
+                <Button
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/test"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="120dp"
+                    android:layout_marginRight="120dp"
+                    android:background="@drawable/btn_bg3"
+                    android:text="Test"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textAllCaps="false">
+
+                </Button>
+
 
             </LinearLayout>
 

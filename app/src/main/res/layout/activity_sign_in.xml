@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SignInActivity">
+    tools:context=".activity.SignInActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -31,6 +31,7 @@
     </TextView>
 
     <EditText
+        android:id="@+id/mobile"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="35dp"
@@ -42,7 +43,19 @@
         android:background="@drawable/btn_bg1"
         android:textColor="@android:color/darker_gray"
         android:textSize="20dp">
-
+    </EditText>
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="35dp"
+        android:hint="User Name"
+        android:padding="5dp"
+        android:maxLength="10"
+        android:layout_margin="20dp"
+        android:background="@drawable/btn_bg1"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="20dp">
     </EditText>
 
     <Button
@@ -57,7 +70,19 @@
         android:text="Get otp"
         android:textColor="@android:color/white"
         android:textSize="20dp">
-
+    </Button>
+    <Button
+        android:id="@+id/testmode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/btn_bg3"
+        android:gravity="center"
+        android:text="testmode"
+        android:textColor="@android:color/white"
+        android:textSize="20dp">
     </Button>
 
     <TextView

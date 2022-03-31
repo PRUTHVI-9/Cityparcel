@@ -8,3 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "CityParcel"
 include ':app'
+include ':PayWithAmazon'
+include ':razorpay-amazonpay-1.3.0'

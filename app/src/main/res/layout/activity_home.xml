@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".activity.HomeActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_tool"
@@ -27,35 +27,25 @@
 
             </TextView>
 
-            <Button
+            <ImageView
                 android:id="@+id/logo"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="70dp"
+                android:src="@drawable/logo"
                 android:layout_toRightOf="@+id/location"
-                android:background="@color/white"
-                android:text="LOGO"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold">
-
-            </Button>
-
+                ></ImageView>
         </RelativeLayout>
-
-
     </androidx.appcompat.widget.Toolbar>
 
-    <com.example.cityparcel.NonSwipeableViewPager
+    <com.example.cityparcel.custom.NonSwipeableViewPager
         android:id="@+id/vp_slider"
-        android:layout_below="@+id/tb_tool"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_above="@+id/tab"
-        android:layout_height="match_parent">
+        android:layout_below="@+id/tb_tool">
 
-    </com.example.cityparcel.NonSwipeableViewPager>
+    </com.example.cityparcel.custom.NonSwipeableViewPager>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab"

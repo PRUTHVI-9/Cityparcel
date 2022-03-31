@@ -16,16 +16,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CityParcel">
         <activity
-            android:name=".HomeActivity"
+            android:name=".GpayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.HomeActivity"
             android:exported="true" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".activity.ProfileActivity"
             android:exported="true" />
         <activity
-            android:name=".BirthdayActivity"
+            android:name=".activity.BirthdayActivity"
             android:exported="true" />
         <activity
-            android:name=".SignInActivity"
+            android:name=".activity.SignInActivity"
             android:exported="true" />
 
         <meta-data
@@ -36,16 +45,16 @@
             android:value="@string/facebook_client_token" />
 
         <activity
-            android:name=".OtpActivity"
+            android:name=".activity.OtpActivity"
             android:exported="true" />
         <activity
-            android:name=".VeiwActivity"
+            android:name=".activity.VeiwActivity"
             android:exported="true" />
         <activity
-            android:name=".ShoppingActivity"
+            android:name=".activity.ShoppingActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -69,6 +78,13 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_3BsJsOi5sfw9KR" />
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" />
     </application>
 
 </manifest>

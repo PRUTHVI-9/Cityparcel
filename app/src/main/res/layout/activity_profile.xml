@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".activity.ProfileActivity">
 
 <ScrollView
     android:layout_width="match_parent"
@@ -28,9 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-
             android:orientation="horizontal">
-
 
             <TextView
                 android:layout_margin="15dp"
@@ -39,7 +37,6 @@
                 android:text="User Name :"
                 android:textStyle="bold"
                 android:textSize="30dp">
-
             </TextView>
 
             <TextView
