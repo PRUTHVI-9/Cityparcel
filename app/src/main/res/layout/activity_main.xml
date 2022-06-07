@@ -7,30 +7,28 @@
     tools:context=".activity.MainActivity"
     android:orientation="vertical">
 
-<!--    <ImageView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:scaleType="fitXY"-->
-<!--        android:src="@drawable/foody1">-->
-
-<!--    </ImageView>-->
-
-<!--    <ImageView-->
-<!--        android:layout_width="320dp"-->
-<!--        android:layout_height="320dp"-->
-<!--        android:layout_marginLeft="50dp"-->
-<!--        android:layout_marginTop="230dp"-->
-<!--        android:scaleType="fitXY"-->
-<!--        android:src="@drawable/cityy">-->
-
-<!--    </ImageView>-->
-
-
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-         android:scaleType="fitXY"
-        android:src="@drawable/city2"></ImageView>
+        android:scaleType="fitXY"
+        android:src="@drawable/sscreen"></ImageView>
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/foodie" />
+
+    <TextView
+        android:id="@+id/foodie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="400dp"
+        android:fontFamily="@font/ceviche_one"
+        android:text="@string/foodie_land"
+        android:textSize="40dp" />
 
 
 </RelativeLayout>

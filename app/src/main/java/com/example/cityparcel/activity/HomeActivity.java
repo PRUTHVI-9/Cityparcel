@@ -7,10 +7,18 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
 
+import com.example.cityparcel.CheckoutActivity;
 import com.example.cityparcel.fragments.FarmFragment;
 import com.example.cityparcel.fragments.Gift_ItemsFragment;
 import com.example.cityparcel.custom.NonSwipeableViewPager;
@@ -22,6 +30,8 @@ import com.example.cityparcel.adapter.SwipeBasdeAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class HomeActivity extends AppCompatActivity {
+    Spinner select_location;
+    String[] arr = {"Select Location", "Thane", "Mulund", "Nahur", "Bhandup", "Kanjur", "Vikhroli", "Ghatkopar"};
     NonSwipeableViewPager pager;
     Menu menu;
     public androidx.appcompat.widget.Toolbar toolbar;
@@ -31,13 +41,29 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        select_location = findViewById(R.id.select_location);
         pager = findViewById(R.id.vp_slider);
         toolbar = findViewById(R.id.tb_tool);
         tabLayout = findViewById(R.id.tab);
+
         setSupportActionBar(toolbar);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(HomeActivity.this, R.layout.spinner_item,arr);
+        select_location.setAdapter(adapter);
+
+        select_location.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.e("TAG", "onItemSelected: " + select_location.getSelectedItem().toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         SwipeBasdeAdapter swipeBasdeAdapter = new SwipeBasdeAdapter(getSupportFragmentManager());
         pager.setAdapter(swipeBasdeAdapter);
-
         pager.setOffscreenPageLimit(4);
 
         tabLayout.setupWithViewPager(pager);

@@ -1,16 +1,20 @@
 package com.example.cityparcel.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cityparcel.CheckoutActivity;
 import com.example.cityparcel.javaclass.Menu;
 import com.example.cityparcel.R;
 
@@ -20,9 +24,11 @@ public class MenuCardAdapter extends RecyclerView.Adapter<MenuCardAdapter.MenuHo
     Context context;
     List<Menu> Menulist;
 
+
     public MenuCardAdapter(Context context, List<Menu> menulist) {
         this.context = context;
         Menulist = menulist;
+
     }
 
     @NonNull
@@ -42,8 +48,14 @@ public class MenuCardAdapter extends RecyclerView.Adapter<MenuCardAdapter.MenuHo
         holder.discription1.setText(menu.getDiscription1());
         holder.discription2.setText(menu.getDiscription2());
         holder.image.setImageResource(menu.getDishimage());
-
-
+        holder.add_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, CheckoutActivity.class);
+                context.startActivity(intent);
+                ((Activity)context).finish();
+            }
+        });
     }
 
     @Override
@@ -54,6 +66,7 @@ public class MenuCardAdapter extends RecyclerView.Adapter<MenuCardAdapter.MenuHo
     public class MenuHolder extends RecyclerView.ViewHolder {
         TextView dish_name,rupee,serves,discription1,discription2;
         ImageView image;
+        Button add_menu;
         public MenuHolder(@NonNull View itemView) {
             super(itemView);
             dish_name=itemView.findViewById(R.id.dish_name);
@@ -62,6 +75,7 @@ public class MenuCardAdapter extends RecyclerView.Adapter<MenuCardAdapter.MenuHo
             discription1=itemView.findViewById(R.id.discription1);
             discription2=itemView.findViewById(R.id.discription2);
             image=itemView.findViewById(R.id.menu_image);
+            add_menu=itemView.findViewById(R.id.add_menu);
         }
 
     }

@@ -194,10 +194,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:weightSum="5"
                 android:orientation="horizontal">
 
 
                 <TextView
+                    android:layout_weight="4"
                     android:id="@+id/near_resto_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -209,13 +211,15 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:layout_weight="1"
                     android:id="@+id/view1"
+                    android:gravity="center"
                     android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="150dp"
                     android:text="View All"
-                    android:textColor="#F46833"
+                    android:textStyle="bold"
+                    android:textColor="#D8699E"
                     android:textSize="18dp"></TextView>
 
             </LinearLayout>
@@ -240,11 +244,13 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:weightSum="5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
             <TextView
+                android:layout_weight="3.5"
                 android:layout_marginTop="10dp"
                 android:id="@+id/homemade"
                 android:layout_width="wrap_content"
@@ -256,13 +262,15 @@
                 android:textStyle="bold" />
 
                 <TextView
+                    android:layout_weight="1.5"
                     android:id="@+id/view2"
+                    android:gravity="center"
                     android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="110dp"
                     android:text="View All"
-                    android:textColor="#F46833"
+                    android:textStyle="bold"
+                    android:textColor="#D8699E"
                     android:textSize="18dp"></TextView>
 
 
@@ -297,11 +305,13 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:weightSum="5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:layout_weight="4"
                     android:id="@+id/farm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -313,13 +323,15 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:layout_weight="1"
                     android:id="@+id/view3"
+                    android:gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="210dp"
                     android:layout_marginTop="10dp"
                     android:text="View All"
-                    android:textColor="#F46833"
+                    android:textStyle="bold"
+                    android:textColor="#D8699E"
                     android:textSize="18dp"></TextView>
 
 
@@ -357,11 +369,13 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:weightSum="5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
             <TextView
+                android:layout_weight="4"
                 android:id="@+id/giftitems"
                 android:layout_marginLeft="10dp"
                 android:textSize="18dp"
@@ -373,13 +387,15 @@
                 android:textStyle="bold" />
 
                 <TextView
+                    android:gravity="center"
+                    android:layout_weight="1"
                     android:id="@+id/view4"
                     android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="250dp"
                     android:text="View All"
-                    android:textColor="#F46833"
+                    android:textStyle="bold"
+                    android:textColor="#D8699E"
                     android:textSize="18dp"></TextView>
 
 
@@ -415,12 +431,14 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:weightSum="5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
 
                 <TextView
+                    android:layout_weight="3.5"
                     android:id="@+id/carrer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -432,18 +450,18 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:layout_weight="1.5"
                     android:id="@+id/view5"
                     android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="160dp"
                     android:text="View All"
-                    android:textColor="#F46833"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="#D8699E"
                     android:textSize="18dp"></TextView>
 
-
             </LinearLayout>
-
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_marginTop="10dp"

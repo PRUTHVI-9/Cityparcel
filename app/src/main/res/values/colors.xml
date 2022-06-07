@@ -8,4 +8,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#FF5722</color>
+    <color name="pink">#D8699E</color>
+
+    <color name="violet">#790CE6</color>
+    <color name="blue">#0B82F3</color>
+    <color name="green">#39E813</color>
+    <color name="yellow">#F3F30D</color>
+    <color name="orangee">#EF7E09</color>
+    <color name="red">#F10E0B</color>
+
 </resources>

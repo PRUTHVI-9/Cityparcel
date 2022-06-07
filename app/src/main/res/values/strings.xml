@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CityParcel</string>
+    <string name="app_name">Foodie Land</string>
     <!-- TODO: Remove or change this placeholder text -->
 
 
@@ -8,6 +8,7 @@
     <string name="facebook_client_token">ae6a19d7f389ae3989b376e50c2c6aa0</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="foodie_land">Foodie Land</string>
 
 
 </resources>

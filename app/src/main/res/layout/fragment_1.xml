@@ -32,16 +32,17 @@
             <LinearLayout
                 android:layout_below="@+id/skipbtn1"
                 android:id="@+id/lay_imageview"
-                android:layout_margin="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:padding="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="300dp"
+                    android:layout_width="match_parent"
                     android:layout_height="300dp"
-                    android:src="@drawable/shopping"/>
+                    android:src="@drawable/eshop"/>
 
             </LinearLayout>
 
@@ -102,6 +103,7 @@
                     android:layout_marginRight="120dp"
                     android:background="@drawable/btn_bg3"
                     android:text="Next"
+                    android:textSize="20dp"
                     android:textColor="@android:color/white"
                     android:textStyle="bold"
                     android:textAllCaps="false">

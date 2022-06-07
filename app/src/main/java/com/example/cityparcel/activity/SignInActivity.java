@@ -8,11 +8,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
 import android.os.Bundle;
+import android.text.TextPaint;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cityparcel.CheckoutActivity;
@@ -47,12 +51,11 @@ public class SignInActivity extends AppCompatActivity {
     GoogleSignInClient googleApiClient;
     private String TAG = getClass().getSimpleName();
     CallbackManager callbackManager;
-    Button button,testmode;
-    EditText mobile,username;
+    Button button;
+    TextView app_logo;
+    EditText mobile, username;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
-
-
 
     @Override
     public void onStart() {
@@ -71,26 +74,26 @@ public class SignInActivity extends AppCompatActivity {
         fblogin.setReadPermissions(Arrays.asList(EMAIL));
         callbackManager = CallbackManager.Factory.create();
         button = findViewById(R.id.get_up);
+        app_logo = findViewById(R.id.app_logo);
         username = findViewById(R.id.username);
         mobile = findViewById(R.id.mobile);
-        preferences = getSharedPreferences("MyApp",MODE_PRIVATE);
-        editor=preferences.edit();
-        testmode = findViewById(R.id.testmode);
-        testmode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(SignInActivity.this, CheckoutActivity.class));
-                finish();
-            }
-        });
+        preferences = getSharedPreferences("MyApp", MODE_PRIVATE);
+        editor = preferences.edit();
+
+        setTextViewColor(app_logo, getResources().getColor(R.color.violet),
+                getResources().getColor(R.color.blue),
+                getResources().getColor(R.color.green),
+                getResources().getColor(R.color.yellow),
+                getResources().getColor(R.color.orangee),
+                getResources().getColor(R.color.red));
 
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                editor.putString("username",username.getText().toString());
-                editor.putString("mobile",mobile.getText().toString());
+                editor.putString("username", username.getText().toString());
+                editor.putString("mobile", mobile.getText().toString());
                 editor.commit();
 
                 Intent intent = new Intent(SignInActivity.this, OtpActivity.class);
@@ -103,15 +106,17 @@ public class SignInActivity extends AppCompatActivity {
         fblogin.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Log.e(TAG, "onSuccess: "+loginResult.getAccessToken() );
+                Log.e(TAG, "onSuccess: " + loginResult.getAccessToken());
             }
+
             @Override
             public void onCancel() {
-                Log.e(TAG, "onCancel: " );
+                Log.e(TAG, "onCancel: ");
             }
+
             @Override
             public void onError(FacebookException error) {
-                Log.e(TAG, "onError: "+error.toString() );
+                Log.e(TAG, "onError: " + error.toString());
             }
         });
         FacebookSdk.sdkInitialize(getApplicationContext());
@@ -136,6 +141,15 @@ public class SignInActivity extends AppCompatActivity {
         });
     }
 
+    private void setTextViewColor(TextView app_logo,int...color){
+        TextPaint paint = app_logo.getPaint();
+        float width = paint.measureText(app_logo.getText().toString());
+
+        Shader shader= new LinearGradient(0,0,width,app_logo.getTextSize(),color,null,Shader.TileMode.CLAMP);
+        app_logo.getPaint().setShader(shader);
+        app_logo.setTextColor(color[0]);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         callbackManager.onActivityResult(requestCode, resultCode, data);
@@ -147,32 +161,32 @@ public class SignInActivity extends AppCompatActivity {
 //
 //
 //                break;
-        if (requestCode==101){
+        if (requestCode == 101) {
             Task<GoogleSignInAccount> signInAccountTask = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
-                if (signInAccountTask.isSuccessful()){
+                if (signInAccountTask.isSuccessful()) {
                     Toast.makeText(SignInActivity.this, "Google LogIn Successfull .", Toast.LENGTH_SHORT).show();
                     try {
                         GoogleSignInAccount googleSignInAccount = signInAccountTask.getResult(ApiException.class);
-                        if (googleSignInAccount != null){
-                            AuthCredential authCredential = GoogleAuthProvider.getCredential(googleSignInAccount.getIdToken(),null);
+                        if (googleSignInAccount != null) {
+                            AuthCredential authCredential = GoogleAuthProvider.getCredential(googleSignInAccount.getIdToken(), null);
 
                             mAuth.signInWithCredential(authCredential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         Log.e(TAG, "onComplete: login success ");
-                                        startActivity(new Intent(SignInActivity.this, ProfileActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                                        startActivity(new Intent(SignInActivity.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                                    }
+                                }
+                            });
                         }
-                    }
-                });
-            }
-        } catch (ApiException e) {
+                    } catch (ApiException e) {
                         e.printStackTrace();
                     }
                 }
             } catch (Exception e) {
-                Log.e(TAG, "onActivityResult: "+e.getMessage() );
+                Log.e(TAG, "onActivityResult: " + e.getMessage());
             }
         }
     }
