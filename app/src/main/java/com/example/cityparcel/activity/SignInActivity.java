@@ -79,6 +79,11 @@ public class SignInActivity extends AppCompatActivity {
         mobile = findViewById(R.id.mobile);
         preferences = getSharedPreferences("MyApp", MODE_PRIVATE);
         editor = preferences.edit();
+        boolean isloggedIn = preferences.getBoolean("is_login",false);
+        if (isloggedIn) {
+            startActivity(new Intent(SignInActivity.this, HomeActivity.class));
+            finish();
+        }
 
         setTextViewColor(app_logo, getResources().getColor(R.color.violet),
                 getResources().getColor(R.color.blue),
@@ -176,6 +181,8 @@ public class SignInActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         Log.e(TAG, "onComplete: login success ");
+                                        editor.putBoolean("is_login",true);
+                                        editor.commit();
                                         startActivity(new Intent(SignInActivity.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                                     }
                                 }
