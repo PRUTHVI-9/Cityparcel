@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,13 +37,17 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 
 public class SignInActivity extends AppCompatActivity {
     SignInButton google_login;
@@ -51,9 +56,10 @@ public class SignInActivity extends AppCompatActivity {
     GoogleSignInClient googleApiClient;
     private String TAG = getClass().getSimpleName();
     CallbackManager callbackManager;
-    Button button;
+    Button get_up;
+    ProgressBar probar1;
     TextView app_logo;
-    EditText mobile, username;
+    EditText mobile;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
 
@@ -73,9 +79,9 @@ public class SignInActivity extends AppCompatActivity {
         fblogin = findViewById(R.id.fb_login);
         fblogin.setReadPermissions(Arrays.asList(EMAIL));
         callbackManager = CallbackManager.Factory.create();
-        button = findViewById(R.id.get_up);
+        get_up = findViewById(R.id.get_up);
+        probar1 = findViewById(R.id.probar1);
         app_logo = findViewById(R.id.app_logo);
-        username = findViewById(R.id.username);
         mobile = findViewById(R.id.mobile);
         preferences = getSharedPreferences("MyApp", MODE_PRIVATE);
         editor = preferences.edit();
@@ -84,7 +90,6 @@ public class SignInActivity extends AppCompatActivity {
             startActivity(new Intent(SignInActivity.this, HomeActivity.class));
             finish();
         }
-
         setTextViewColor(app_logo, getResources().getColor(R.color.violet),
                 getResources().getColor(R.color.blue),
                 getResources().getColor(R.color.green),
@@ -93,17 +98,57 @@ public class SignInActivity extends AppCompatActivity {
                 getResources().getColor(R.color.red));
 
 
-        button.setOnClickListener(new View.OnClickListener() {
+        get_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (!mobile.getText().toString().trim().isEmpty()){
+                    if ((mobile.getText().toString().trim()).length()==10)
+                    {
+                        probar1.setVisibility(View.VISIBLE);
+                        get_up.setVisibility(View.INVISIBLE);
 
-                editor.putString("username", username.getText().toString());
-                editor.putString("mobile", mobile.getText().toString());
-                editor.commit();
+                        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                                "+91" + mobile.getText().toString(), 60, TimeUnit.SECONDS, SignInActivity.this,
+                                new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                                    @Override
+                                    public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                                        probar1.setVisibility(View.VISIBLE);
+                                        get_up.setVisibility(View.INVISIBLE);
+                                    }
 
-                Intent intent = new Intent(SignInActivity.this, OtpActivity.class);
-                startActivity(intent);
-                finish();
+                                    @Override
+                                    public void onVerificationFailed(@NonNull FirebaseException e) {
+                                        probar1.setVisibility(View.VISIBLE);
+                                        get_up.setVisibility(View.INVISIBLE);
+                                        Toast.makeText(SignInActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                                    }
+
+                                    @Override
+                                    public void onCodeSent(@NonNull String backendotp, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                                        probar1.setVisibility(View.VISIBLE);
+                                        get_up.setVisibility(View.INVISIBLE);
+
+                                        Intent intent=new Intent(getApplicationContext(),OtpActivity.class);
+                                        intent.putExtra("mobile",mobile.getText().toString());
+                                        intent.putExtra("backendotp",backendotp);
+                                        startActivity(intent);
+                                    }
+                                }
+                        );
+
+                    }else {
+                        Toast.makeText(SignInActivity.this, "Please enter correct Number", Toast.LENGTH_SHORT).show();
+                    }
+                }else {
+                    Toast.makeText(SignInActivity.this, "Enter Mobile number", Toast.LENGTH_SHORT).show();
+                }
+//                editor.putString("username", username.getText().toString());
+//                editor.putString("mobile", mobile.getText().toString());
+//                editor.commit();
+//                Intent intent = new Intent(SignInActivity.this, OtpActivity.class);
+//                startActivity(intent);
+//                finish();
             }
         });
 

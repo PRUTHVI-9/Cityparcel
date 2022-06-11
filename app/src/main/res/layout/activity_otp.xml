@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".activity.OtpActivity">
 
     <LinearLayout
@@ -14,60 +14,186 @@
         android:orientation="vertical">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Verify your mobile"
-        android:textSize="35dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:layout_marginTop="70dp">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            android:src="@drawable/foodie_r" />
 
-    </TextView>
-    <TextView
-        android:layout_marginTop="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="17dp"
-        android:text="Enter the 4 digit code that was "
-android:gravity="center"></TextView>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="17dp"
-        android:text="send to your Mobile Number "
-android:gravity="center"></TextView>
-
-
-        <com.example.cityparcel.custom.OtpEditText
-            android:layout_marginTop="50dp"
-            android:id="@+id/et_otp"
-            android:layout_width="200dp"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:cursorVisible="false"
-            android:digits="1234567890"
-            android:inputType="number"
-            android:background="@android:color/holo_red_dark"
-            android:maxLength="4"
-            android:textIsSelectable="false"
-            android:textSize="20sp"/>
+            android:layout_marginTop="30dp"
+            android:text="OTP verification"
+            android:textColor="@color/black"
+            android:textSize="35dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="Please enter OTP sent to your Mobile Number"
+            android:textSize="17dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:text=""
+            android:id="@+id/txtmobileno"
+            />
+
+
+        <!--        <com.example.cityparcel.custom.OtpEditText-->
+        <!--            android:layout_marginTop="50dp"-->
+        <!--            android:id="@+id/et_otp"-->
+        <!--            android:layout_width="200dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:cursorVisible="false"-->
+        <!--            android:digits="1234567890"-->
+        <!--            android:inputType="number"-->
+        <!--            android:background="@android:color/holo_red_dark"-->
+        <!--            android:maxLength="4"-->
+        <!--            android:textIsSelectable="false"-->
+        <!--            android:textSize="20sp"/>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:background="@drawable/otp_bg"
+                android:layout_width="40dp"
+                android:layout_height="46dp"
+                android:id="@+id/inputotp1"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/pink"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="Lable1For"/>
+            <EditText
+                android:background="@drawable/otp_bg"
+                android:layout_width="40dp"
+                android:layout_height="46dp"
+                android:id="@+id/inputotp2"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/pink"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="Lable1For"/>
+            <EditText
+                android:background="@drawable/otp_bg"
+                android:layout_width="40dp"
+                android:layout_height="46dp"
+                android:id="@+id/inputotp3"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/pink"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="Lable1For"/>
+            <EditText
+                android:background="@drawable/otp_bg"
+                android:layout_width="40dp"
+                android:layout_height="46dp"
+                android:id="@+id/inputotp4"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/pink"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="Lable1For"/>
+            <EditText
+                android:background="@drawable/otp_bg"
+                android:layout_width="40dp"
+                android:layout_height="46dp"
+                android:id="@+id/inputotp5"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/pink"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="Lable1For"/>
+            <EditText
+                android:background="@drawable/otp_bg"
+                android:layout_width="40dp"
+                android:layout_height="46dp"
+                android:id="@+id/inputotp6"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/pink"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="Lable1For"/>
+
+        </LinearLayout>
+
 
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="17dp"
-            android:text="Didn't receive the sms? "
-            android:gravity="center"></TextView>
+            android:gravity="center"
+            android:text="Didn't receive OTP ? "
+            android:textSize="17dp"/>
+
         <TextView
+            android:id="@+id/sendotp_again"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="17dp"
-            android:text="Request new code in 00:00 "
-            android:gravity="center"></TextView>
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Send OTP again"
+            android:textSize="17dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/verify"
@@ -80,17 +206,20 @@ android:gravity="center"></TextView>
             android:gravity="center"
             android:text="Verify"
             android:textColor="@android:color/white"
-            android:textSize="20dp">
+            android:textSize="20dp"/>
 
-        </Button>
+            <ProgressBar
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:id="@+id/probar2"/>
+
+        </FrameLayout>
+
 
 
     </LinearLayout>
-
-
-
-
-
 
 
 </ScrollView>

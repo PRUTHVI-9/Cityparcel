@@ -5,16 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".activity.SignInActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:gravity="center"
-        android:text="Welcome to Restaurant"
+        android:text="Welcome to Foodie Land"
         android:textColor="@android:color/black"
-        android:textSize="35dp"
+        android:textSize="30dp"
         android:textStyle="bold">
 
     </TextView>
@@ -22,54 +23,103 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:gravity="center"
-        android:text="Sign in to continue "
-        android:textColor="@android:color/darker_gray"
-        android:textSize="23dp">
+        android:text="We will send you an one time OTP on this given mobile number"
+        android:textColor="#878383"
+        android:textSize="17dp">
 
     </TextView>
-
-    <EditText
-        android:id="@+id/mobile"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="35dp"
-        android:hint="Mobile no"
-        android:padding="5dp"
-        android:maxLength="10"
-        android:inputType="number"
-        android:layout_margin="10dp"
-        android:background="@drawable/menu_btn"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="20dp">
-    </EditText>
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="User Name"
-        android:padding="5dp"
-        android:maxLength="10"
-        android:layout_margin="10dp"
-        android:background="@drawable/menu_btn"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="20dp">
-    </EditText>
-
-    <Button
-        android:id="@+id/get_up"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/btn_bg3"
+        android:layout_marginTop="25dp"
         android:gravity="center"
-        android:text="Get otp"
-        android:textColor="@android:color/white"
-        android:textSize="20dp">
-    </Button>
+        android:text="Enter mobile number "
+        android:textColor="#878383"
+        android:textSize="17dp">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/country"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:hint="+91"
+            android:padding="5dp"
+            android:maxLength="2"
+            android:inputType="number"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/menu_btn"
+            android:textColor="#7A7878"
+            android:textSize="20dp">
+        </EditText>
+        <EditText
+            android:id="@+id/mobile"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:hint="Mobile no"
+            android:padding="5dp"
+            android:maxLength="10"
+            android:inputType="number"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/menu_btn"
+            android:textColor="#7A7878"
+            android:textSize="20dp">
+        </EditText>
+
+
+    </LinearLayout>
+
+
+<!--    <EditText-->
+<!--        android:id="@+id/username"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:hint="User Name"-->
+<!--        android:padding="5dp"-->
+<!--        android:maxLength="10"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:background="@drawable/menu_btn"-->
+<!--        android:textColor="@android:color/darker_gray"-->
+<!--        android:textSize="20dp">-->
+<!--    </EditText>-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/get_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/btn_bg3"
+            android:gravity="center"
+            android:text="Get otp"
+            android:textColor="@android:color/white"
+            android:textSize="20dp">
+        </Button>
+
+        <ProgressBar
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:id="@+id/probar1"/>
+
+
+    </FrameLayout>
+
+
 
     <TextView
         android:layout_width="match_parent"
@@ -116,7 +166,7 @@
     <ImageView
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:src="@drawable/foodie_r"/>
 
